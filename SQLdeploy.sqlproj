@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SQLdeploy</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{357fea28-9a3c-4c62-b987-c1a6a6d538f2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SQLdeploy</RootNamespace>
+    <AssemblyName>SQLdeploy</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Firms.sql" />
+    <Build Include="dbo\Tables\FirmDomains.sql" />
+    <Build Include="dbo\Tables\EmailAccounts.sql" />
+    <Build Include="dbo\Tables\Forms.sql" />
+    <Build Include="dbo\Tables\FormElements.sql" />
+    <Build Include="dbo\Tables\FormSubmissions.sql" />
+    <Build Include="dbo\Tables\Pages.sql" />
+    <Build Include="dbo\Tables\MediaItems.sql" />
+    <Build Include="dbo\Tables\MenuItems.sql" />
+    <Build Include="dbo\Tables\Posts.sql" />
+    <Build Include="dbo\Tables\Sliders.sql" />
+    <Build Include="dbo\Tables\Slides.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Tables\CalendarEvents.sql" />
+    <Build Include="dbo\Tables\BulletLists.sql" />
+    <Build Include="dbo\Tables\Bullets.sql" />
+    <Build Include="dbo\Tables\UsStates.sql" />
+    <Build Include="dbo\Tables\Newsletters.sql" />
+    <Build Include="dbo\Tables\SampleCategories.sql" />
+    <Build Include="dbo\Tables\SampleSubCategories.sql" />
+    <Build Include="dbo\Tables\SampleContents.sql" />
+    <Build Include="dbo\Tables\DemoFirms.sql" />
+    <Build Include="Security\MVS_NT_DejanB.sql" />
+    <Build Include="Security\WebsitesUser.sql" />
+    <Build Include="Security\WebsitesUser_1.sql" />
+    <Build Include="Security\MVS_NT_CharlesK.sql" />
+    <Build Include="Security\MVS_NT_JOE.sql" />
+    <Build Include="Security\AWCRMUser.sql" />
+    <Build Include="Security\AWCRMUser_1.sql" />
+    <Build Include="Security\MVS_NT_KalpanaA.sql" />
+    <Build Include="Security\AOAdminUser.sql" />
+    <Build Include="Security\AOAdminUser_1.sql" />
+    <Build Include="Security\MVS_NT_FrankL.sql" />
+    <Build Include="Security\T2MAppUser.sql" />
+    <Build Include="Security\MVS_NT_MiroslavP.sql" />
+    <Build Include="Security\AWMstrBill.sql" />
+    <Build Include="Security\AWMstrBill_1.sql" />
+    <Build Include="Security\AWLoginUser.sql" />
+    <Build Include="Security\AWLoginUser_1.sql" />
+    <Build Include="Security\AWCommonUser.sql" />
+    <Build Include="Security\AWCommonUser_1.sql" />
+    <Build Include="Security\MVS_NT_KeshavK.sql" />
+    <Build Include="Security\ChangeManagementAdmin.sql" />
+    <Build Include="Security\ChangeManagementAdmin_1.sql" />
+    <Build Include="Security\MVS_NT_RajaP.sql" />
+    <Build Include="Security\MVS_NT_RenatoB.sql" />
+    <Build Include="Security\CharlesK.sql" />
+    <Build Include="Security\CharlesK_1.sql" />
+    <Build Include="Security\JOE.sql" />
+    <Build Include="Security\JOE_1.sql" />
+    <Build Include="Security\JoeS.sql" />
+    <Build Include="Security\JoeS_1.sql" />
+    <Build Include="Security\KalpanaA.sql" />
+    <Build Include="Security\KalpanaA_1.sql" />
+    <Build Include="Security\RenatoB.sql" />
+    <Build Include="Security\RenatoB_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fnBilling_MailBoxBundle.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_GetNewsletters.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_GetNewsletterDetail.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_SaveNewsletterDetail.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_GetFirmList.sql" />
+    <Build Include="dbo\Stored Procedures\AoAdmin_FirmCheckDomainRegistered.sql" />
+    <Build Include="dbo\Stored Procedures\AoAdmin_GetEmailInfoByStaff.sql" />
+    <Build Include="dbo\Stored Procedures\AoAdmin_FirmGetEmailStatus.sql" />
+    <Build Include="dbo\Stored Procedures\AoAdmin_FirmGetAOOURL.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_FirmGetDomains.sql" />
+    <Build Include="dbo\Stored Procedures\NewsletterLinkList.sql" />
+    <Build Include="dbo\Stored Procedures\FirmWebsiteURLGet.sql" />
+    <Build Include="dbo\Stored Procedures\GetFirmsForAutoPublish.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_GetEmailServiceType.sql" />
+    <Build Include="dbo\Stored Procedures\FirmGetAllMailboxes.sql" />
+    <Build Include="dbo\Stored Procedures\AoAdmin_FirmActiveStatus.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_DemoExpiresForFirm.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_FirmGetMailboxCount.sql" />
+    <Build Include="dbo\Stored Procedures\Billing_GetFirmDomainInfo.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_DeleteNewsletter.sql" />
+    <Build Include="dbo\Stored Procedures\AWMaster_DomainNameGet.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_FirmHasWebsiteAccess.sql" />
+    <Build Include="Security\AWCommonUser_2.sql" />
+    <Build Include="Security\AWMstrBill_2.sql" />
+    <Build Include="Security\MVS_NT_KeshavK_1.sql" />
+    <Build Include="Security\MVS_NT_RajaP_1.sql" />
+    <Build Include="Security\T2MAppUser_1.sql" />
+  </ItemGroup>
+</Project>
